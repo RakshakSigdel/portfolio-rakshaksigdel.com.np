@@ -7,10 +7,10 @@ import Navbar from './components/Navbar';
 function App() {
   return (
     <div className="relative h-screen flex flex-col">
-      <div className="flex-grow" style={{ height: '91%' }}>
+      <div className="flex-grow" >
         <Banner />
       </div>
-      <div className="flex-grow-0" style={{ height: '10%' }}>
+      <div className="flex-grow-0" >
         <Navbar />
       </div>
     </div>

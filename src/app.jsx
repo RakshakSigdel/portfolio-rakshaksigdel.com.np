@@ -1,19 +1,19 @@
 import './index.css'
-// src/App.jsx
 import React from 'react';
-import Banner from './components/Banner';
-import Navbar from './components/Navbar';
+import NavBar from './components/NavBar';
+import Page1 from './Pages/Page1/Page1';
+
 
 function App() {
   return (
-    <div className="relative h-screen flex flex-col">
-      <div className="flex-grow" >
-        <Banner />
+    <>
+      <div className='h-[91vh]'>
+        <Page1 />
       </div>
-      <div className="flex-grow-0" >
-        <Navbar />
+      <div className='z-50'>
+        <NavBar />
       </div>
-    </div>
+    </>
   );
 }
 

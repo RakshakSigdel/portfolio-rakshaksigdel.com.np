@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "framer-motion": "^11.5.4",
     "preact": "^10.22.0"
   },
   "devDependencies": {

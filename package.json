@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "framer-motion": "^11.5.4",
-    "preact": "^10.22.0"
+    "preact": "^10.22.0",
+    "swiper": "^11.1.14"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.2",

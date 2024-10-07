@@ -1,47 +1,31 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import './index.css'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
-const WhirlpoolLoader = () => {
-  const segments = 50
-  const rotations = 5
+import Home from './section/Home';
+import Loader from './component/loader';
+
+export default function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // Minimum loader time
+
+    return () => clearTimeout(timer); // Cleanup
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
-    <div className="flex h-screen w-screen items-center justify-center">
-      <svg width="100%" height="100%" viewBox="-100 -100 200 200">
-        <motion.g
-          animate={{ rotate: 360 }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-        >
-          {[...Array(segments)].map((_, i) => {
-            const angle = (i / segments) * Math.PI * 2 * rotations
-            const radius = 5 + (90 * i) / segments
-            const x = Math.cos(angle) * radius
-            const y = Math.sin(angle) * radius
-
-            return (
-              <motion.circle
-                key={i}
-                cx={x}
-                cy={y}
-                r={2 + (i / segments) * 3}
-                fill="#fb3a5d"
-                initial={{ scale: 0, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: (i / segments) * 2,
-                  repeat: Infinity,
-                  repeatType: 'reverse',
-                  repeatDelay: 1,
-                }}
-              />
-            )
-          })}
-        </motion.g>
-      </svg>
-    </div>
-  )
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<Navigate to="/" />} /> Redirect unknown paths
+      </Routes>
+    </Router>
+  );
 }
-
-export default WhirlpoolLoader

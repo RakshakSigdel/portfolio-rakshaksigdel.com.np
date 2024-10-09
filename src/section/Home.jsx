@@ -4,11 +4,10 @@ import try1 from "/images/try5.jpg"
 
 const Home = () => {
     return (
-        <div className="bg-white mx-20">
+        <div className="bg-white mx-4 md:mx-20">
             {/* ABOUT ME */}
             <SectionOverview
                 imgUrl={try1}
-                // imgUrl="https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg"
                 subheading="You're Checking On"
                 heading="RAKSHAK SIGDEL"
                 descriptionHeading="About Me"

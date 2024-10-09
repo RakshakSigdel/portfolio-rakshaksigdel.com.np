@@ -24,7 +24,7 @@ const WhirlpoolLoader = () => {
                 cx={x}
                 cy={y}
                 r={2 + (i / segments) * 3}
-                fill="#fb3a5d"
+                fill="var(--primary)"
                 initial={{ scale: 0, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{

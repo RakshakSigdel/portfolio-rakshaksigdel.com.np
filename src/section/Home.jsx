@@ -1,6 +1,6 @@
 import React from 'react'
-import LearnedTechnologies from '../component/swiperCarousel'
-
+import LearnedTechnologies from '../component/swiperCarousel';
+// import HamburgerMenu from '../component/hamburgerMenu';
 const images = [
     'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png',//HTML
     'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519',//VS CODE
@@ -19,7 +19,9 @@ const images = [
 export default function Home() {
     return (
         <>
-            <LearnedTechnologies images={images} />
+            <div className='mx-20'>
+                <LearnedTechnologies images={images} />
+            </div>
         </>
     )
 }

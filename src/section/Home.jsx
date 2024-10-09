@@ -1,27 +1,43 @@
-import React from 'react'
-import LearnedTechnologies from '../component/swiperCarousel';
-// import HamburgerMenu from '../component/hamburgerMenu';
-const images = [
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/512px-HTML5_logo_and_wordmark.svg.png',//HTML
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/512px-Visual_Studio_Code_1.35_icon.svg.png?20210804221519',//VS CODE
-    'https://miro.medium.com/v2/resize:fit:522/0*Hdm7hBTZ-hKlbtlV.png',//REACT
-    'https://algopulsespro.com/cdn/shop/files/Logo-csharp.webp?v=1723614475',//c#
-    'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',//JAVASCRIPT
-    'https://seeklogo.com/images/G/github-logo-5F384D0265-seeklogo.com.png',//GITHUB
-    'https://seeklogo.com/images/U/unity-logo-988A22E703-seeklogo.com.png',//UNITY
-    'https://www.ejable.com/wp-content/uploads/2022/04/Framer-Motion.webp',//FRAMER MOTION
-    'https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png',//ANDROID STUDIO
-    'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png',//FIGMA
-    'https://cdn-icons-png.flaticon.com/256/919/919826.png',//CSS
-];
+import React from "react";
+import SectionOverview from "../component/SectionOverview"; // Assuming both files are in the same directory
+import try1 from "/images/try5.jpg"
 
-
-export default function Home() {
+const Home = () => {
     return (
-        <>
-            <div className='mx-20'>
-                <LearnedTechnologies images={images} />
-            </div>
-        </>
-    )
-}
+        <div className="bg-white mx-20">
+            {/* ABOUT ME */}
+            <SectionOverview
+                imgUrl={try1}
+                // imgUrl="https://t4.ftcdn.net/jpg/03/08/69/75/360_F_308697506_9dsBYHXm9FwuW0qcEqimAEXUvzTwfzwe.jpg"
+                subheading="You're Checking On"
+                heading="RAKSHAK SIGDEL"
+                descriptionHeading="About Me"
+                descriptionPara1="My name is Rakshak Sigdel, and I am currently pursuing a Bachelor's degree in Information Technology. I enjoy working on tech projects that challenge my skills and enhance my understanding of IT. I consider myself a quick learner, able to adapt and absorb knowledge efficiently."
+                descriptionPara2="Click on Learn More to get more information About Me"
+                learnMorePath="/About"
+            />
+            {/* SKILLS */}
+            <SectionOverview
+                imgUrl="https://www.metsci.com/wp-content/uploads/2020/10/iStock-871030872-1140x760.jpg"
+                subheading="Learn about"
+                heading="MY SKILLS"
+                descriptionHeading="My Skills"
+                descriptionPara1="I have a solid foundation in programming languages like React, Python, and C#. My familiarity with various frameworks and tools enables me to develop efficient applications and tackle complex problems effectively."
+                descriptionPara2="Click on the learn More button to view my skills"
+                learnMorePath="/skills"
+            />
+            <SectionOverview
+                imgUrl="https://wallpapers.com/images/hd/project-management-tools-illustration-20vwwkbworhkpzff.jpg"
+                subheading="Take a look at Some"
+                heading="PROJECTS"
+                descriptionHeading="My Projects"
+                descriptionPara1="I have worked on a variety of projects, both individually and as part of a group. Through these experiences, I have developed strong teamwork, communication, and problem-solving skills. Each project has been a learning opportunity that allowed me to collaborate effectively and contribute to successful outcomes."
+                descriptionPara2="Click the learn more button to explore the projects I’ve been involved in."
+                learnMorePath="/modern"
+            />
+
+        </div>
+    );
+};
+
+export default Home;

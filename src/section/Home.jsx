@@ -2,10 +2,12 @@ import React from "react";
 import SectionOverview from "../component/SectionOverview"; // Assuming both files are in the same directory
 import try1 from "/images/try5.jpg"
 
+
 const Home = () => {
     return (
         <div className="bg-white mx-4 md:mx-20">
             {/* ABOUT ME */}
+            
             <SectionOverview
                 imgUrl={try1}
                 subheading="You're Checking On"

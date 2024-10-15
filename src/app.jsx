@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 // Global Components
-import Loader from './component/loader';
 import HamburgerMenu from './component/hamburgerMenu';
 // Individual Sections
 import Home from './section/Home';
@@ -11,20 +10,6 @@ import Projects from './section/Projects';
 import Contact from './section/Contact';
 
 export default function App() {
-  // Loader loads for a minimum of 3 seconds before the page opens up 
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000); 
-    return () => clearTimeout(timer); 
-  }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
-
   return (
     <div className="bg-background min-h-screen"> {/* Apply bg-background to the entire app */}
       <Router>

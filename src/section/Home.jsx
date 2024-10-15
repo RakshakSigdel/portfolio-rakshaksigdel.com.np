@@ -7,7 +7,6 @@ const Home = () => {
     return (
         <div className="bg-white mx-4 md:mx-20">
             {/* ABOUT ME */}
-            
             <SectionOverview
                 imgUrl={try1}
                 subheading="You're Checking On"
@@ -55,3 +54,7 @@ const Home = () => {
 };
 
 export default Home;
+
+
+//https://rakshaksigdel.com.np/contact
+//https://rakshaksigdel.com.np/contact

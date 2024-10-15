@@ -4,8 +4,9 @@ import { motion, useCycle } from "framer-motion";
 const items = [
   { id: "0", text: "Home", icon: "🏠", path: "/" },
   { id: "1", text: "About", icon: "ℹ️", path: "/about" },
-  { id: "2", text: "Projects", icon: "💻", path: "/projects" },
-  { id: "3", text: "Blogs", icon: "✍️", path: "/blogs" },
+  { id: "2", text: "Skills", icon: "💡", path: "/Skills" },
+  { id: "3", text: "Projects", icon: "💻", path: "/projects" },
+  // { id: "4", text: "Blogs", icon: "✍️", path: "/blogs" },
   { id: "4", text: "Contact", icon: "📧", path: "/contact" },
 ];
 // Sidebar animation variants

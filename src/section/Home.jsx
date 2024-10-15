@@ -1,3 +1,4 @@
+//Home.jsx
 import React from "react";
 import SectionOverview from "../component/SectionOverview"; // Assuming both files are in the same directory
 import try1 from "/images/try5.jpg"
@@ -14,7 +15,7 @@ const Home = () => {
                 descriptionHeading="About Me"
                 descriptionPara1="My name is Rakshak Sigdel, and I am currently pursuing a Bachelor's degree in Information Technology. I enjoy working on tech projects that challenge my skills and enhance my understanding of IT. I consider myself a quick learner, able to adapt and absorb knowledge efficiently."
                 descriptionPara2="Click on About Me to get more information"
-                learnMorePath="/About"
+                learnMorePath="/about"
                 buttonText="About Me"
             />
             {/* SKILLS */}

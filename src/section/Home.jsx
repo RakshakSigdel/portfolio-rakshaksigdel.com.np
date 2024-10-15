@@ -43,7 +43,7 @@ const Home = () => {
                 descriptionHeading="Contacts"
                 descriptionPara1="Whether you're looking to collaborate on exciting projects, need expertise for your next big idea, or are interested in learning together—I'm here to help! Feel free to reach out if you're hiring, seeking guidance, or simply want to exchange ideas. Let's build something amazing together!"
                 descriptionPara2="Click the learn more button to find all the means of contact available for us to get connected"
-                learnMorePath="/modern"
+                learnMorePath="/contact"
             />
 
         </div>

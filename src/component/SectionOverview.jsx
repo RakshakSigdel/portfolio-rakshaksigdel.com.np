@@ -5,7 +5,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 import OnScrollFade from '../Animation/OnScrollFade'
 const IMG_PADDING = 12;
 
-const SectionOverview = ({ imgUrl, subheading, heading, descriptionHeading, descriptionPara1, descriptionPara2, learnMorePath ,buttonText}) => {
+const SectionOverview = ({ imgUrl, subheading, heading, descriptionHeading, descriptionPara1, descriptionPara2, learnMorePath, buttonText }) => {
     return (
         <div className="bg-background">
             <div className="relative h-[150vh]">
@@ -24,12 +24,13 @@ const SectionOverview = ({ imgUrl, subheading, heading, descriptionHeading, desc
                         <p className="mb-8 text-xl text-neutral-600 md:text-2xl">
                             {descriptionPara2}
                         </p>
-                        <button
-                            onClick={() => window.location.href = learnMorePath}
+                        <Link
+                            to={learnMorePath}
                             className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit"
                         >
-                            {buttonText}<FiArrowUpRight className="inline" />
-                        </button>
+                            {buttonText}
+                            <FiArrowUpRight className="inline" />
+                        </Link>
                     </div>
                 </div>
             </OnScrollFade>

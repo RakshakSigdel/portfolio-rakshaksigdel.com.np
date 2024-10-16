@@ -2,7 +2,9 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-import OnScrollFade from '../Animation/OnScrollFade'
+import OnScrollFade from '../Animation/OnScrollFade';
+import { Link } from 'react-router-dom';
+
 const IMG_PADDING = 12;
 
 const SectionOverview = ({ imgUrl, subheading, heading, descriptionHeading, descriptionPara1, descriptionPara2, learnMorePath, buttonText }) => {

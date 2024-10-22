@@ -9,6 +9,7 @@ import HamburgerMenu from './component/hamburgerMenu';
 // Individual Sections
 import Home from './section/Home';
 import About from './section/About';
+import Skills from './section/Skills'
 import Blogs from './section/Blogs';
 import Projects from './section/Projects';
 const ContactPage = lazy(() => import('./section/Contact'));
@@ -22,6 +23,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/About" element={<About />} />
+            <Route path="/Skills" element={<Skills />} />
             <Route path="/Blogs" element={<Blogs />} />
             <Route path="/Projects" element={<Projects />} />
             <Route path="/Contact" element={<ContactPage />} />

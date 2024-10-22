@@ -17,7 +17,7 @@ const SectionOverview = ({ imgUrl, subheading, heading, descriptionHeading, desc
             <OnScrollFade>
                 <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 px-4 pb-24 pt-12 md:grid-cols-12">
                     <h2 className="col-span-1 text-3xl font-bold md:col-span-4">
-                        {descriptionHeading}
+                        <BubbleText text={descriptionHeading} />
                     </h2>
                     <div className="col-span-1 md:col-span-8">
                         <p className="mb-4 text-xl text-neutral-600 md:text-2xl">
@@ -72,7 +72,7 @@ const StickyImage = ({ imgUrl }) => {
         </motion.div>
     );
 };
-
+import BubbleText from '../component/BubbleHover';
 const OverlayCopy = ({ subheading, heading }) => {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
@@ -94,6 +94,7 @@ const OverlayCopy = ({ subheading, heading }) => {
         >
             <p className="mb-2 text-center text-xl md:mb-4 md:text-3xl">{subheading}</p>
             <p className="text-center text-4xl font-bold md:text-7xl">{heading}</p>
+
         </motion.div>
     );
 };

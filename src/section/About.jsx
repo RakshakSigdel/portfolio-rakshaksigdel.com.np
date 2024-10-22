@@ -5,8 +5,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { FiMapPin } from "react-icons/fi";
 import { useRef } from "react";
+
+import ButtonHover from '../component/ButtonHover'
 
 import img6 from '/images/img6.jpg';
 import img8 from '/images/img8.jpg';
@@ -14,7 +15,7 @@ import img11 from '/images/img11.jpg';
 import img12 from '/images/img12.jpg'
 import img13 from '/images/download.png'
 
-
+import Testimonial from '../component/Testimonial'
 export default function AboutSection() {
   return (
     <div className="bg-background">
@@ -25,7 +26,8 @@ export default function AboutSection() {
         }}
       >
         <Hero />
-        <Schedule />
+        <WhoAmI />
+        <Testimonial />
       </ReactLenis>
     </div>
   );
@@ -146,47 +148,33 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
   );
 };
 
-const Schedule = () => {
+
+
+//PART 2
+import OnScrollFade from '../Animation/OnScrollFade'
+const WhoAmI = () => {
+  const DownloadCVClicked = () => {
+    alert("CV UNDER CONSTRUCTION");
+  }
   return (
     <section
-      id="launch-schedule"
-      className="mx-auto max-w-5xl px-4 py-48 text-white"
+      id="launch-WhoAmI"
+      className="mx-auto max-w-5xl px-4 py-48"
     >
       <motion.h1
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-20 text-4xl font-black uppercase text-zinc-50"
+        className="mb-10 text-4xl font-black uppercase"
       >
-        Launch Schedule
+        Who Am I?
       </motion.h1>
-      <ScheduleItem title="NG-21" date="Dec 9th" location="Florida" />
-      <ScheduleItem title="Starlink" date="Dec 20th" location="Texas" />
-      <ScheduleItem title="Starlink" date="Jan 13th" location="Florida" />
-      <ScheduleItem title="Turksat 6A" date="Feb 22nd" location="Florida" />
-      <ScheduleItem title="NROL-186" date="Mar 1st" location="California" />
-      <ScheduleItem title="GOES-U" date="Mar 8th" location="California" />
-      <ScheduleItem title="ASTRA 1P" date="Apr 8th" location="Texas" />
+      <OnScrollFade>
+        <p className="mb-10">
+          "I am a 19-year-old software enthusiast currently pursuing a BSc (Hons) in Computing, with a strong passion for developing software solutions. As part of my learning journey toward becoming a software developer, I am actively building small-scale applications to enhance my skills and create a well-rounded portfolio. My focus is on gaining hands-on experience in various aspects of software development, from coding and problem-solving to working with different technologies. By working on these projects, I aim to continuously improve my understanding of the software development lifecycle and prepare myself for larger challenges in the tech industry."
+        </p>
+      </OnScrollFade>
+      <ButtonHover buttonText="Download My CV" onClick={DownloadCVClicked} />
     </section>
-  );
-};
-
-const ScheduleItem = ({ title, date, location }) => {
-  return (
-    <motion.div
-      initial={{ y: 48, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
-      transition={{ ease: "easeInOut", duration: 0.75 }}
-      className="mb-9 flex items-center justify-between border-b border-zinc-800 px-3 pb-9"
-    >
-      <div>
-        <p className="mb-1.5 text-xl text-zinc-50">{title}</p>
-        <p className="text-sm uppercase text-zinc-500">{date}</p>
-      </div>
-      <div className="flex items-center gap-1.5 text-end text-sm uppercase text-zinc-500">
-        <p>{location}</p>
-        <FiMapPin />
-      </div>
-    </motion.div>
   );
 };

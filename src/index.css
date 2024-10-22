@@ -3,7 +3,9 @@
 @tailwind utilities;
 #app { height: 100% }
 :root {
-  --primary: #1d4ed8; /* Replace with your actual Tailwind primary color */
+  --background:#F4F6FF;
+  --primary: #10375C; /* Replace with your actual Tailwind primary color */
+  --secondary:#EB8317;
 }
 
 

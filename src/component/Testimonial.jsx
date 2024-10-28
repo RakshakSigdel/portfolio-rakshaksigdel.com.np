@@ -1,106 +1,42 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+// Testimonial.jsx
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
-const testimonials = [
-  {
-    text: 'First testimonial goes here. Praising your product or service and expressing satisfaction.',
-    author: 'Ansub',
-    image:
-      'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/t2awrrfzdvmg1chnzyfr.svg',
-  },
-  {
-    text: 'Another testimonial goes here. Praising your product or service and expressing satisfaction.',
-    author: 'Lex Collins',
-
-    image:
-      'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/pmblusboe7vkw8vxdknx.svg',
-  },
-  {
-    text: 'Third testimonial goes here. Praising your product or service and expressing satisfaction.',
-    author: 'Alex Jones',
-    image:
-      'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276558/logos/tyos2ayezryjskox3wzs.svg',
-  },
-  {
-    text: 'Fourth testimonial goes here. Praising your product or service and expressing satisfaction.',
-    author: 'John Doe',
-    image:
-      'https://res.cloudinary.com/dfhp33ufc/image/upload/v1715276560/logos/nymiivu48d5lywhf9rpf.svg',
-  },
-]
-
-const TestimonialCarousel = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0)
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentTestimonial(
-        (prevTestimonial) => (prevTestimonial + 1) % testimonials.length,
-      )
-    }, 5000) // Change Time here
-
-    return () => {
-      clearInterval(intervalId)
-    }
-  }, [])
-
-  const { text, author, image } = testimonials[currentTestimonial]
-
-  const variants = {
-    initial: { opacity: 0, y: '100%', scale: 0.1 },
-    animate: { opacity: 1, y: 0, scale: 1 },
-    exit: { opacity: 0, y: '100%', scale: 0.1 },
-  }
-  const dotVariants = {
-    active: { scale: 1.2, backgroundColor: '#3f3f46' },
-    inactive: { scale: 1, backgroundColor: '#D1D5DB' },
-  }
-
+const Testimonial = ({ testimonials }) => {
   return (
-    <section className="mx-20">
-      <div className="w-full max-w-2xl">
-        <AnimatePresence mode="popLayout">
-          <motion.div
-            key={currentTestimonial}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            variants={variants}
-            className="flex w-full flex-col items-center justify-center"
-            transition={{
-              type: 'spring',
-              stiffness: 200,
-              damping: 20,
-              duration: 0.5,
-            }}
-          >
-            <img src={image} alt={author} className="m-0 h-24 w-24" />
-            <p className="m-0 text-center text-2xl font-medium tracking-tight">
-              &quot;{text}&quot;
-            </p>
-            <div className="mx-auto mt-5">
-              <div className="flex flex-col items-center justify-center space-x-3">
-                <div className="font-regular text-sm text-gray-900/80">
-                  {author}
+    <div className="bg-gray-900 text-white py-16 px-4">
+      <h2 className="text-3xl font-bold text-center">Testimonials</h2>
+      <p className="text-center mt-2 text-gray-400">
+        What others say?
+      </p>
+
+      <div className="mt-10 max-w-2xl mx-auto">
+        <Swiper
+          modules={[Navigation]}
+          navigation
+          spaceBetween={50}
+          slidesPerView={1}
+          className="swiper-container"
+        >
+          {testimonials.map((testimonial) => (
+            <SwiperSlide key={testimonial.id} className="p-8 bg-gray-800 rounded-lg">
+              <p className="text-xl text-center">"{testimonial.testimonial}"</p>
+              <div className="flex items-center justify-center mt-4">
+                <img src={testimonial.avatar} alt={testimonial.name} className="w-10 h-10 rounded-full" />
+                <div className="ml-3 text-center">
+                  <p className="font-semibold">{testimonial.name}</p>
+                  <p className="text-gray-500 text-sm">{testimonial.title}</p>
                 </div>
               </div>
-            </div>
-          </motion.div>
-          <div className="mt-8 flex justify-center">
-            {testimonials.map((_, index) => (
-              <motion.div
-                key={index}
-                className="mx-1 h-1 w-1 cursor-pointer rounded-full"
-                variants={dotVariants}
-                animate={index === currentTestimonial ? 'active' : 'inactive'}
-                onClick={() => setCurrentTestimonial(index)}
-              />
-            ))}
-          </div>
-        </AnimatePresence>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
-    </section>
-  )
-}
+    </div>
+  );
+};
 
-export default TestimonialCarousel
+export default Testimonial;

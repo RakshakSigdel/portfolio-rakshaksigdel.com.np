@@ -17,6 +17,23 @@ import img13 from '/images/download.png'
 
 import Testimonial from '../component/Testimonial'
 export default function AboutSection() {
+  const testimonials = [
+    {
+      id: 1,
+      name: "John Doe",
+      title: "Role/Position",
+      avatar: "https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png", // Replace with an actual image URL
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec gravida bibendum risus eu semper. Suspendisse potenti. Etiam sit amet vehicula sapien, quis convallis purus. Proin suscipit ante orci.",
+    },
+    {
+      id: 2,
+      name: "John Doe",
+      title: "Product Manager at Facebook",
+      avatar: "https://via.placeholder.com/40",
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur, nunc vel vehicula posuere, nisl felis tempus nibh, ut malesuada nisl lacus at augue.",
+    },
+    // Add more testimonials as needed
+  ];
   return (
     <div className="bg-background">
       <ReactLenis
@@ -27,7 +44,7 @@ export default function AboutSection() {
       >
         <Hero />
         <WhoAmI />
-        <Testimonial />
+        <Testimonial testimonials={testimonials}/>
       </ReactLenis>
     </div>
   );
@@ -93,21 +110,21 @@ const ParallaxImages = () => {
     <div className="mx-auto max-w-5xl px-4 pt-[200px]">
       <ParallaxImg
         src={img11}
-        alt="And example of a space launch"
+        alt="first image on the left"
         start={-200}
         end={200}
         className="w-1/3"
       />
       <ParallaxImg
         src={img12}
-        alt="An example of a space launch"
-        start={200}
-        end={-250}
+        alt="Second image on the center"
+        start={-100}
+        end={-550}
         className="mx-auto w-2/3"
       />
       <ParallaxImg
         src={img13}
-        alt="Orbiting satellite"
+        alt="third image on the right"
         start={-200}
         end={200}
         className="ml-auto w-1/3"
@@ -116,7 +133,7 @@ const ParallaxImages = () => {
         src={img6}
         alt="Orbiting satellite"
         start={0}
-        end={-500}
+        end={-900}
         className="ml-24 w-5/12"
       />
     </div>
@@ -151,6 +168,7 @@ const ParallaxImg = ({ className, alt, src, start, end }) => {
 
 
 //PART 2
+import whoamiimage from '/images/whoamii.png'
 import OnScrollFade from '../Animation/OnScrollFade'
 const WhoAmI = () => {
   const DownloadCVClicked = () => {
@@ -159,22 +177,26 @@ const WhoAmI = () => {
   return (
     <section
       id="launch-WhoAmI"
-      className="mx-auto max-w-5xl px-4 py-48"
+      className="mx-auto max-w-5xl px-4 py-48 flex flex-col lg:flex-row mt-48"
     >
-      <motion.h1
+      <motion.div
+        className="w-full lg:w-1/2"
         initial={{ y: 48, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ ease: "easeInOut", duration: 0.75 }}
-        className="mb-10 text-4xl font-black uppercase"
       >
-        Who Am I?
-      </motion.h1>
-      <OnScrollFade>
-        <p className="mb-10">
-          "I am a 19-year-old software enthusiast currently pursuing a BSc (Hons) in Computing, with a strong passion for developing software solutions. As part of my learning journey toward becoming a software developer, I am actively building small-scale applications to enhance my skills and create a well-rounded portfolio. My focus is on gaining hands-on experience in various aspects of software development, from coding and problem-solving to working with different technologies. By working on these projects, I aim to continuously improve my understanding of the software development lifecycle and prepare myself for larger challenges in the tech industry."
-        </p>
-      </OnScrollFade>
-      <ButtonHover buttonText="Download My CV" onClick={DownloadCVClicked} />
+        <img src={whoamiimage} alt="" height={400} width={400} />
+      </motion.div>
+      <div className="w-full lg:w-1/2 md:h-full md:items-center mt-10 lg:mt-20 text-primary">
+        <OnScrollFade>
+          <p className="mb-10 flex">
+            "I am a 19-year-old software enthusiast currently pursuing a BSc (Hons) in Computing, with a strong passion for developing software solutions. As part of my learning journey toward becoming a software developer, I am actively building small-scale applications to enhance my skills and create a well-rounded portfolio. My focus is on gaining hands-on experience in various aspects of software development, from coding and problem-solving to working with different technologies. By working on these projects, I aim to continuously improve my understanding of the software development lifecycle and prepare myself for larger challenges in the tech industry."
+          </p>
+        </OnScrollFade>
+        <ButtonHover buttonText="Download My CV" onClick={DownloadCVClicked} />
+      </div>
     </section>
+
+
   );
 };

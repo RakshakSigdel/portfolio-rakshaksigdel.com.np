@@ -27,6 +27,20 @@ export default function AboutSection() {
     },
     {
       id: 2,
+      name: "Rakshak Sigdel",
+      title: "Lorem..!",
+      avatar: "https://via.placeholder.com/40",
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur, nunc vel vehicula posuere, nisl felis tempus nibh, ut malesuada nisl lacus at augue.",
+    },
+    {
+      id: 3,
+      name: "John Doe",
+      title: "Product Manager at Facebook",
+      avatar: "https://via.placeholder.com/40",
+      testimonial: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum consectetur, nunc vel vehicula posuere, nisl felis tempus nibh, ut malesuada nisl lacus at augue.",
+    },
+    {
+      id: 4,
       name: "John Doe",
       title: "Product Manager at Facebook",
       avatar: "https://via.placeholder.com/40",
@@ -196,7 +210,5 @@ const WhoAmI = () => {
         <ButtonHover buttonText="Download My CV" onClick={DownloadCVClicked} />
       </div>
     </section>
-
-
   );
 };

@@ -34,10 +34,10 @@ const Contact = () => {
   
    const iconData = [
     {
-      text: "WhatsApp",
-      link: "https://example.com/unavailable",
-      icon: <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/640px-WhatsApp.svg.png"}
-        alt="Whatsapp"
+      text: "Youtube",
+      link: "https://www.youtube.com/@RakshakSigdel",
+      icon: <img src={"https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/2560px-YouTube_full-color_icon_%282017%29.svg.png"}
+        alt="Youtube"
         className="h-8 w-8 object-contain" />,
       delay: 20.5
     },

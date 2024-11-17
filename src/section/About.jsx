@@ -12,8 +12,8 @@ import ButtonHover from '../component/ButtonHover'
 import img6 from '/images/img6.jpg';
 import img8 from '/images/img8.jpg';
 import img11 from '/images/img11.jpg';
-import img12 from '/images/img12.jpg'
-import img13 from '/images/download.png'
+import img12 from '/images/img12.jpg';
+import img13 from '/images/download.png';
 
 import Testimonial from '../component/Testimonial'
 export default function AboutSection() {
@@ -58,7 +58,7 @@ export default function AboutSection() {
       >
         <Hero />
         <WhoAmI />
-        <Testimonial testimonials={testimonials}/>
+        <Testimonial testimonials={testimonials} />
       </ReactLenis>
     </div>
   );
@@ -186,8 +186,9 @@ import whoamiimage from '/images/whoamii.png'
 import OnScrollFade from '../Animation/OnScrollFade'
 const WhoAmI = () => {
   const DownloadCVClicked = () => {
-    alert("CV UNDER CONSTRUCTION");
-  }
+    const pdfPath = "/cv.pdf"; 
+    window.open(pdfPath, "_blank");
+  };
   return (
     <section
       id="launch-WhoAmI"

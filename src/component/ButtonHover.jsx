@@ -37,10 +37,10 @@ const ButtonContent = styled.span`
   z-index: 1;
 `;
 
-const ButtonHover = ({ buttonText,onClick }) => {
+const ButtonHover = ({ buttonText, onClick }) => {
   return (
-    <Button>
-      <ButtonContent onClick ={onClick}>{buttonText}</ButtonContent>
+    <Button onClick={onClick}>
+      <ButtonContent>{buttonText}</ButtonContent>
     </Button>
   );
 };

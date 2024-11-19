@@ -3,6 +3,7 @@ import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
 import OnScrollFade from '../Animation/OnScrollFade';
+import ButtonHover from '../component/ButtonHover'
 import { Link } from 'react-router-dom';
 
 const IMG_PADDING = 12;
@@ -28,10 +29,12 @@ const SectionOverview = ({ imgUrl, subheading, heading, descriptionHeading, desc
                         </p>
                         <Link
                             to={learnMorePath}
-                            className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit"
+                        // className="w-full rounded bg-neutral-900 px-9 py-4 text-xl text-white transition-colors hover:bg-neutral-700 md:w-fit"
                         >
-                            {buttonText}
-                            <FiArrowUpRight className="inline" />
+                            <ButtonHover buttonText={buttonText}>
+
+                            </ButtonHover>
+                            <FiArrowUpRight className="inline text-black z-100 text-2xl" />
                         </Link>
                     </div>
                 </div>
